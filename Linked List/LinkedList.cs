@@ -15,7 +15,7 @@ public class LinkedList
         first = node;
 
         if (temp == null) return;
-        
+
         while (true)
         {
             if (temp.next == null)
@@ -26,7 +26,7 @@ public class LinkedList
 
             temp = temp.next;
         }
-    } 
+    }
 
     // addLast
     public void AddLast(Node node)
@@ -90,7 +90,7 @@ public class LinkedList
 
             if (temp.next == null)
                 break;
-            
+
             index++;
             temp = temp.next;
         }
@@ -113,5 +113,22 @@ public class LinkedList
         }
 
         Console.WriteLine("]");
+    }
+
+    public void Reverse(Node? node = null)
+    {
+        Node? prev = null;
+        Node curr = first;
+        Node? next = null;
+
+        while (curr != null)
+        {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        first = prev;
     }
 }

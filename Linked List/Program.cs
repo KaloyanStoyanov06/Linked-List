@@ -16,3 +16,5 @@ Console.WriteLine(list.IndexOf(16));
 list.DeleteFirst();
 list.Show();
 
+list.Reverse();
+list.Show();
