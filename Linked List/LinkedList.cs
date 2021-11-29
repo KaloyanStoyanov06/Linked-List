@@ -2,13 +2,13 @@
 
 namespace Linked_List;
 
-public class LinkedList
+public class LinkedList<T>
 {
-    private Node first;
-    private Node last;
-
+    private Node<T> first;
+    private Node<T> last;
+    
     // addFirst
-    public void AddFirst(Node node)
+    public void AddFirst(Node<T> node)
     {
         node.next = first;
         var temp = first;
@@ -29,14 +29,14 @@ public class LinkedList
     }
 
     // addLast
-    public void AddLast(Node node)
+    public void AddLast(Node<T> node)
     {
         last.next = node;
         last = node;
     }
 
     // deleteFirst
-    public int DeleteFirst()
+    public object DeleteFirst()
     {
         var value = first.value;
         first = first.next;
@@ -47,7 +47,7 @@ public class LinkedList
     // deleteLast
     public void DeleteLast()
     {
-        Node temp = first;
+        Node<T> temp = first;
         while (true)
         {
             if (temp.next == last)
@@ -61,9 +61,9 @@ public class LinkedList
     }
 
     // contains
-    public bool Contains(int Value)
+    public bool Contains(object Value)
     {
-        Node temp = first;
+        Node<T> temp = first;
         while (true)
         {
             if (temp.value == Value)
@@ -77,10 +77,10 @@ public class LinkedList
     }
 
     // indexOf
-    public int IndexOf(int Value)
+    public int IndexOf(object Value)
     {
         int index = 0;
-        Node temp = first;
+        Node<T> temp = first;
         while (true)
         {
             if (temp.value == Value)
@@ -100,7 +100,7 @@ public class LinkedList
 
     public void Show()
     {
-        Node temp = first;
+        Node<T> temp = first;
         Console.Write("[");
         while (true)
         {
@@ -115,11 +115,11 @@ public class LinkedList
         Console.WriteLine("]");
     }
 
-    public void Reverse(Node? node = null)
+    public void Reverse(Node<T>? node = null)
     {
-        Node? prev = null;
-        Node curr = first;
-        Node? next = null;
+        Node<T>? prev = null;
+        Node<T> curr = first;
+        Node<T>? next = null;
 
         while (curr != null)
         {

@@ -1,13 +1,13 @@
 ﻿using System;
 using Linked_List;
 
-var list = new LinkedList();
+var list = new Linked_List.LinkedList<string>();
 
-list.AddFirst(new Node(15));
-list.AddFirst(new Node(23));
-list.AddFirst(new Node(167));
-list.AddFirst(new Node(200));
-list.AddLast(new Node(16));
+list.AddFirst(new Node<string>("Goshko"));
+list.AddFirst(new Node<string>("Hristiqn"));
+list.AddFirst(new Node<string>("Kristiqncho"));
+list.AddFirst(new Node<string>("Kaloyancho"));
+list.AddLast(new Node<string>("Kirkata"));
 
 list.Show();
 Console.WriteLine(list.Contains(15));
